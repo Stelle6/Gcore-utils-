@@ -1,0 +1,8 @@
+# Ignore compiled binaries
+*.exe
+*.out
+*.class
+
+logs/
+*.log
+tmp/
