@@ -39,7 +39,7 @@ func touch(filenames []string, timestamp time.Time, noCreate bool) error {
 		err := os.Chtimes(filename, timestamp, timestamp)
 		if err != nil {
 			if os.IsNotExist(err) && !noCreate {
-				// Create the file if it doesn't exist and noCreate is false
+        // Create the file if it doesn't exist and noCreate is false
 				file, err := os.Create(filename)
 				if err != nil {
 					return fmt.Errorf("error creating file %s: %v", filename, err)
@@ -66,7 +66,7 @@ func main() {
 	filenames := flag.Args()
 
 	if len(filenames) == 0 {
-		fmt.Fprintln(os.Stderr, "touch: missing file operand")
+		fmt.Fprintln(os.Stderr, "new: missing file operand")
 		os.Exit(1)
 	}
 
@@ -75,14 +75,14 @@ func main() {
 		var err error
 		timestamp, err = time.Parse("200601021504.05", *timestampStr) // Example format, customize as needed
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "touch: invalid date time format: %v\n", err)
+			fmt.Fprintf(os.Stderr, "new: invalid date time format: %v\n", err)
 			os.Exit(1)
 		}
 	}
 
 	err := touch(filenames, timestamp, *noCreate)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "touch: %v\n", err)
+		fmt.Fprintf(os.Stderr, "new: %v\n", err)
 		os.Exit(1)
 	}
 
