@@ -27,6 +27,13 @@ cd new
 go build -o new.exe 
 ```
 
+## Build All Utilities
+
+```bash
+make all
+# binaries output to build/bin
+```
+
 ## Utilities Status
 
 | Utility | Status | Description | Cross-Platform |
