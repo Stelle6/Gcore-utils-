@@ -33,6 +33,7 @@ go build -o new.exe
 |---------|--------|-------------|----------------|
 | gcat    | ✅ Working | Concatenate and print files | Yes |
 | new     | ✅ Working | Create new empty files (similar to touch) | Yes |
+| cp      | ✅ Working | Copy files and directories | Yes |
 | *More utilities planned* | 🚧 In Progress | | |
 
 ## Usage Examples
@@ -51,6 +52,19 @@ go build -o new.exe
 
 ```
 
+### cp
+```bash
+# Copy one file
+./cp source.txt destination.txt
+
+# Copy multiple files into a directory
+./cp file1.txt file2.txt target_dir/
+
+# Copy directories recursively
+./cp -r source_dir target_dir
+```
+
+
 ## Contributing
 
 Contributions are welcome! Feel free to:
@@ -62,6 +76,7 @@ Contributions are welcome! Feel free to:
 
 - [x] gcat implementation
 - [x] new (touch) implementation
+- [x] cp utility
 - [ ] Additional core utilities
 - [ ] Unit tests
 - [ ] CI/CD pipeline
